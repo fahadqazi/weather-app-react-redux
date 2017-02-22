@@ -14,12 +14,7 @@ class WeatherList extends Component{
         const temps = _.map(cityData.list.map(weather => weather.main.temp), temp => temp - 273 );
         const pressures = cityData.list.map(weather => weather.main.pressure);
         const humidities = cityData.list.map(weather => weather.main.humidity);
-        // const lon = cityData.city.coord.lon;
-        // console.log('here is lon', lon)
-        // const lat = cityData.city.coord.lat;
-
-        //es6 alternative
-        const { lon, lat } = cityData.city.coord;
+        const { lon, lat } = cityData.city.coord;   //es6
 
         return(
             <tr key={name}>
@@ -51,7 +46,6 @@ class WeatherList extends Component{
 }
 
 function mapStateToProps(state){
-    console.log('state', state);
     return { weather: state.weather }
 }
 
