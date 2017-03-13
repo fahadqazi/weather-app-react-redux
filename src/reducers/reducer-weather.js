@@ -4,9 +4,9 @@ export default function(state=[], action){
 
     switch(action.type){
         case FETCH_WEATHER:
-            return state.concat([action.payload.data]);
+            // return state.concat([action.payload.data]);
             //es6 alternative
-            // return [ action.type.data, ...state ];
+            return [ action.payload.data, ...state ];
     }
     return state
 }
